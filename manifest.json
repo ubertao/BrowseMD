@@ -1,0 +1,42 @@
+{
+  "manifest_version": 2,
+
+  "name": "BrowseMD",
+  "description": "Renders Markdown documents in HTML",
+  "version": "1.0",
+  "icons": { "16": "images/icon16.png",
+             "48": "images/icon48.png",
+             "128": "images/icon128.png" },
+
+  "permissions": ["tabs"],
+
+  "background": {
+    "scripts": ["js/background.js"]
+  },
+
+  "page_action": {
+    "default_icon": {
+      "19": "images/icon19.png",
+      "38": "images/icon38.png"
+    },
+    "default_title": "Markdown",
+    "default_popup": "html/page_popup.html"
+  },
+
+  "web_accessible_resources": [
+    "css/avenir-white.css",
+    "css/markdown.css",
+    "css/swiss.css",
+    "css/foghorn.css",
+    "css/markdown-alt.css",
+    "css/screen.css"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": ["file:///*.md", "*://*/*.markdown","*://*/*.mdown","*://*/*.mkdn","*://*/*.md","*://*/*.mkd","*://*/*.mdwn","*://*/*.mdtxt","*://*/*.mdtext"],
+      "js": ["js/showdown.js", "js/showMarkdown.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
