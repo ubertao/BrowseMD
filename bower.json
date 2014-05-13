@@ -1,0 +1,26 @@
+{
+  "name": "BrowseMD",
+  "version": "0.1.0",
+  "homepage": "https://github.com/ubertao/BrowseMD",
+  "description": "Browser extension to render Markdown document",
+  "main": "manifest.json",
+  "keywords": [
+    "markdown"
+  ],
+  "authors": [
+    "ubertao"
+  ],
+  "dependencies": {
+    "showdown": "0.x",
+    "markdown-css-themes": "https://github.com/jasonm23/markdown-css-themes.git#2bab19caff1590ede65821cedd5cd1ac4d63233d"
+  },
+  "license": "GPLv2",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

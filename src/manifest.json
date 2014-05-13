@@ -3,7 +3,7 @@
 
   "name": "BrowseMD",
   "description": "Renders Markdown documents in HTML",
-  "version": "1.0",
+  "version": "0.2",
   "icons": { "16": "images/icon16.png",
              "48": "images/icon48.png",
              "128": "images/icon128.png" },
@@ -24,6 +24,8 @@
   },
 
   "web_accessible_resources": [
+    "css/text.css",
+    "css/github.css",
     "css/avenir-white.css",
     "css/markdown.css",
     "css/swiss.css",
@@ -35,7 +37,7 @@
   "content_scripts": [
     {
       "matches": ["file:///*.md", "*://*/*.markdown","*://*/*.mdown","*://*/*.mkdn","*://*/*.md","*://*/*.mkd","*://*/*.mdwn","*://*/*.mdtxt","*://*/*.mdtext"],
-      "js": ["js/showdown.js", "js/content.js"],
+      "js": ["js/lib/showdown.js", "js/content.js"],
       "run_at": "document_end"
     }
   ]

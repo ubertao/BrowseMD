@@ -1,4 +1,6 @@
-chrome.runtime.onMessage.addListener(function(message, sender) {
+/* global chrome */
+
+function onBackgroundMessage(message, sender) {
     if (message && message.type === 'showPageAction') {
         chrome.pageAction.show(sender.tab.id);
         chrome.pageAction.setTitle({
@@ -6,4 +8,6 @@ chrome.runtime.onMessage.addListener(function(message, sender) {
             title: 'url=' + sender.tab.url
         });
     }
-});
+}
+
+chrome.runtime.onMessage.addListener(onBackgroundMessage);
